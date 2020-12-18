@@ -9,7 +9,14 @@ export default class Navegacion extends Component {
 
             <p className ="text-white">
                 {this.props.titulo}
-            </p>        
+                &nbsp;
+                <span className= "badge rounded-pill bg-light text-dark">
+                
+                {this.props.cantidadDeTareas}
+                </span>
+            </p>
+
+                  
             </nav>
 
         )

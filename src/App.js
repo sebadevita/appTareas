@@ -41,7 +41,7 @@ class App extends Component {
     return (
       <div className="App">
   
-        <Navegacion titulo = "Tareas">
+        <Navegacion titulo = "Tareas" cantidadDeTareas = {this.state.tareas.length}>
   
         </Navegacion>
 
