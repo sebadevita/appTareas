@@ -1,0 +1,30 @@
+{
+    "tareas" : [
+        {
+            "titulo": "Tarea 1",
+            "responsable": "Sebita",
+            "descripcion": "Limpiar el cuarto",
+            "prioridad": "media"
+        },
+
+        {
+            "titulo": "Tarea 2",
+            "responsable": "Andy",
+            "descripcion": "Comprar silla",
+            "prioridad": "baja"
+        },
+        {
+            "titulo": "Tarea 3",
+            "responsable": "Mati",
+            "descripcion": "Lavar la ropa",
+            "prioridad": "alta"
+        },
+        {
+            "titulo": "Tarea 4",
+            "responsable": "Orne",
+            "descripcion": "Pasear al perro",
+            "prioridad": "baja"
+        }
+    ]
+
+}
