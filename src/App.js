@@ -2,6 +2,7 @@ import './App.css';
 import Navegacion from './components/Navegacion';
 import React, {Component} from 'react';
 import {tareas} from './tareas.json'
+import FormularioTareas from './components/FormularioTareas';
 
 class App extends Component {
   constructor(){
@@ -9,12 +10,23 @@ class App extends Component {
     this.state = {
       tareas
     }
-  }
+    
+    this.agregarTarea = this.agregarTarea.bind(this)
 
+
+  }
+  
+      agregarTarea(tarea){
+        this.setState({
+          tareas:[...this.state.tareas, tarea]
+        })
+      }
+  
   render() {
     
    const tareas = this.state.tareas.map((tarea , i) => {
       return (
+
         <div className = "col-md-4">
 
         <div className= "card mt-4">
@@ -37,7 +49,6 @@ class App extends Component {
         </div>
       )
     })
-    console.log ("Antes de renderizar")
     return (
       <div className="App">
   
@@ -48,6 +59,8 @@ class App extends Component {
         <div className = "container">
           <div className = "row mt-4"></div>
           <div className = "col-md-4 text-center"></div>
+          <FormularioTareas onAgregarTarea= {this.agregarTarea}>
+          </FormularioTareas>
           <div className = "col-md-8">
           <div className = "row">
             

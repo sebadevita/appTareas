@@ -7,6 +7,7 @@ export default class Navegacion extends Component {
 
             <nav className= "navbar navbar-dark bg-dark" >
 
+
             <p className ="text-white">
                 {this.props.titulo}
                 &nbsp;
