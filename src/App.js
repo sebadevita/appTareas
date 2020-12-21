@@ -21,13 +21,23 @@ class App extends Component {
           tareas:[...this.state.tareas, tarea]
         })
       }
+
+      borrarTarea(index){
+        this.setState({
+
+          tareas: this.state.tareas.filter((tareas, i)=>  {
+            return i !== index
+          })
+
+        })
+      }
   
   render() {
     
    const tareas = this.state.tareas.map((tarea , i) => {
       return (
 
-        <div className = "col-md-4">
+        <div className = "col-md-4" key={i}>
 
         <div className= "card mt-4">
           <div className = "card-header text-center"> 
@@ -42,6 +52,17 @@ class App extends Component {
 
           <p>{tarea.descripcion}</p>
           <b> {tarea.responsable}</b>
+
+          <div className= "card-footer" >
+            <button 
+            className= "btn btn-danger"
+            onClick= {this.borrarTarea.bind(this, i)}
+            >
+              Borrar
+
+            </button>
+
+          </div>
             
               
           </div>
