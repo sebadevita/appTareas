@@ -35,6 +35,10 @@ export default class FormularioTareas extends Component {
         return(
             <div>
             <div className= "card">
+                <div className= "card-header">
+
+                     <h4>Agregar tarea nueva</h4>
+                    </div>
                 <form className= "card-body" onSubmit={this.handleSubmit} >
                     <div className= "form-group" >
                         <input 
@@ -68,8 +72,8 @@ export default class FormularioTareas extends Component {
 
                         <div className= "form-group" >
                         <select 
-                        name="prioridad" 
                         className="form-control"
+                        name="prioridad" 
                         onChange= {this.handleInput}
                         >
                         <option>Baja</option>
@@ -79,10 +83,14 @@ export default class FormularioTareas extends Component {
                         </select>
                         </div>
 
+                        <div className= "card-footer">
+
+
                         <button type="submit" className="btn btn-primary">
                             Guardar
                         </button>
 
+                        </div>
 
                 </form>
 

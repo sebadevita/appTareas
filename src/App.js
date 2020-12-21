@@ -52,8 +52,8 @@ class App extends Component {
 
           <p>{tarea.descripcion}</p>
           <b> {tarea.responsable}</b>
-
-          <div className= "card-footer" >
+          </div>
+          <div className= "card-footer text-center" >
             <button 
             className= "btn btn-danger"
             onClick= {this.borrarTarea.bind(this, i)}
@@ -62,7 +62,6 @@ class App extends Component {
 
             </button>
 
-          </div>
             
               
           </div>
@@ -77,30 +76,24 @@ class App extends Component {
   
         </Navegacion>
 
-        <div className = "container">
-          <div className = "row mt-4"></div>
-          <div className = "col-md-4 text-center"></div>
-          <FormularioTareas onAgregarTarea= {this.agregarTarea}>
-          </FormularioTareas>
-          <div className = "col-md-8">
-          <div className = "row">
-            
 
-          <div className = "container">
-            <div className = "row mt-4">
-              {tareas}
+        <div className = "container">
+          <div className = "row mt-4">
+             <div className = "col-md-4 text-center">
+
+            <FormularioTareas onAgregarTarea= {this.agregarTarea}></FormularioTareas>
+          </div>
+                <div className = "col-md-8">
+                <div className = "row">
+            
+                  {tareas}  
+                </div>
+                </div>
             </div>
 
-          </div>
-
             
 
-          </div>
-          </div>
         </div>
-
-  
-       
       </div>
     )
 
