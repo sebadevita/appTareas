@@ -3,102 +3,38 @@ import Navegacion from './components/Navegacion';
 import React, {Component} from 'react';
 import {tareas} from './tareas.json'
 import FormularioTareas from './components/FormularioTareas';
+import Tareas from './components/Tareas';
 
 class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      tareas
-    }
-    
-    this.agregarTarea = this.agregarTarea.bind(this)
 
+  state = {
+
+    tareas: tareas
 
   }
-  
-      agregarTarea(tarea){
-        this.setState({
-          tareas:[...this.state.tareas, tarea]
-        })
-      }
 
-      borrarTarea(index){
-        this.setState({
-
-          tareas: this.state.tareas.filter((tareas, i)=>  {
-            return i !== index
-          })
-
-        })
-      }
-  
-  render() {
-    
-   const tareas = this.state.tareas.map((tarea , i) => {
-      return (
-
-        <div className = "col-md-4" key={i}>
-
-        <div className= "card mt-4">
-          <div className = "card-header text-center"> 
-          <h3>{tarea.titulo}</h3>
-
-          <span class="badge rounded-pill bg-primary">
-            {tarea.prioridad}
-          </span>
-          </div>
-
-          <div className = "card-body text-center">
-
-          <p>{tarea.descripcion}</p>
-          <b> {tarea.responsable}</b>
-          </div>
-          <div className= "card-footer text-center" >
-            <button 
-            className= "btn btn-danger"
-            onClick= {this.borrarTarea.bind(this, i)}
-            >
-              Borrar
-
-            </button>
-
-            
-              
-          </div>
-        </div>
-        </div>
-      )
-    })
+  render(){
     return (
-      <div className="App">
-  
-        <Navegacion titulo = "Tareas" cantidadDeTareas = {this.state.tareas.length}>
-  
-        </Navegacion>
-
-
+      <div>
+        <Navegacion titulo = "Mis Tareas" contador = {this.state.tareas.length}/>
+        
         <div className = "container">
           <div className = "row mt-4">
              <div className = "col-md-4 text-center">
 
-            <FormularioTareas onAgregarTarea= {this.agregarTarea}></FormularioTareas>
-          </div>
-                <div className = "col-md-8">
-                <div className = "row">
+             </div>
+        
+        <FormularioTareas />
             
-                  {tareas}  
-                </div>
-                </div>
-            </div>
-
-            
-
-        </div>
+        
+        <Tareas tareas = {this.state.tareas}/>
+      </div>
+      </div>
       </div>
     )
 
   }
-  
 }
+ 
 
 export default App;

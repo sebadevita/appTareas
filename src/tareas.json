@@ -1,29 +1,36 @@
 {
     "tareas" : [
-        {
+        {   "idTarea": 1,
             "titulo": "Tarea 1",
             "responsable": "Sebita",
             "descripcion": "Limpiar el cuarto",
-            "prioridad": "media"
+            "prioridad": "media",
+            "hecho": "No"
         },
 
         {
+            "idTarea": 2,
             "titulo": "Tarea 2",
             "responsable": "Andy",
             "descripcion": "Comprar silla",
-            "prioridad": "baja"
+            "prioridad": "baja",
+            "hecho": "No"
         },
         {
+            "idTarea": 3,
             "titulo": "Tarea 3",
             "responsable": "Mati",
             "descripcion": "Lavar la ropa",
-            "prioridad": "alta"
+            "prioridad": "alta",
+            "hecho": "No"
         },
         {
+            "idTarea": 4,
             "titulo": "Tarea 4",
             "responsable": "Orne",
             "descripcion": "Pasear al perro",
-            "prioridad": "baja"
+            "prioridad": "baja",
+            "hecho": "Si"
         }
     ]
 

@@ -11,7 +11,7 @@ export default class Navegacion extends Component {
                 &nbsp;
                 <span className= "badge rounded-pill bg-light text-dark">
                 
-                {this.props.cantidadDeTareas}
+                {this.props.contador}
                 </span>
             </p>
 
