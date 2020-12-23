@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class Tarea extends Component {
     render() {
@@ -44,4 +45,10 @@ export default class Tarea extends Component {
             </div>
         )
     }
+}
+
+Tarea.propTypes = {
+
+    tarea: PropTypes.object.isRequired
+
 }
