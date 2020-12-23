@@ -2,21 +2,16 @@ import React, {Component} from 'react';
 
 export default class FormularioTareas extends Component {
 
-
-    constructor () {
-        super();
-        this.state = {
+        state = {
           titulo: '',
           responsable: '',
           descripcion: '',
           prioridad: 'baja'
         }
 
-        this.handleInput = this.handleInput.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-    }
+    //Las funciones flecha evitan tener que usar el metodo ".bind"
 
-    handleInput (e) {
+    onChange = e => {
         const {value, name} = e.target
         this.setState({
             [name]: value
@@ -25,13 +20,14 @@ export default class FormularioTareas extends Component {
 
     }
     
-    handleSubmit(e){
+    onSubmit = e => { 
         e.preventDefault()
-        this.props.onAgregarTarea(this.state)
-
+        this.props.agregarTarea(this.state)
     }
 
     render() {
+
+        
         return(
             <div>
             <div className= "card">
@@ -39,14 +35,15 @@ export default class FormularioTareas extends Component {
 
                      <h4>Agregar tarea nueva</h4>
                     </div>
-                <form className= "card-body" onSubmit={this.handleSubmit} >
+                <form className= "card-body" onSubmit={this.onSubmit} >
                     <div className= "form-group" >
                         <input 
                         type= "text"
                         name= "titulo"
                         className= "form-control"
                         placeholder= "Título"
-                        onChange= {this.handleInput}
+                        onChange= {this.onChange}
+                        value = {this.state.titulo}
                         />
                         </div>
 
@@ -56,7 +53,8 @@ export default class FormularioTareas extends Component {
                         name= "responsable"
                         className= "form-control"
                         placeholder= "Responsable"
-                        onChange= {this.handleInput}
+                        onChange= {this.onChange}
+                        value = {this.state.responsable}
                         />
                         </div>
 
@@ -66,7 +64,8 @@ export default class FormularioTareas extends Component {
                         name= "descripcion"
                         className= "form-control"
                         placeholder= "Descripción"
-                        onChange= {this.handleInput}
+                        onChange= {this.onChange}
+                        value= {this.state.descripcion}
                         />
                         </div>
 
@@ -74,7 +73,8 @@ export default class FormularioTareas extends Component {
                         <select 
                         className="form-control"
                         name="prioridad" 
-                        onChange= {this.handleInput}
+                        onChange= {this.onChange}
+                        value= {this.state.prioridad}
                         >
                         <option>Baja</option>
                         <option>Media</option>

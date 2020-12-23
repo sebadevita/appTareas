@@ -13,6 +13,22 @@ class App extends Component {
 
   }
 
+  agregarTarea = tarea => {
+
+    const nuevaTarea = {
+      id: this.state.tareas.length,
+      titulo: tarea.titulo,
+      descripcion: tarea.descripcion,
+      prioridad: tarea.prioridad,
+      responsable: tarea.responsable,
+    }
+
+    this.setState({
+      tareas: [...this.state.tareas, nuevaTarea]
+    })
+
+  }
+
   render(){
     return (
       <div>
@@ -24,7 +40,7 @@ class App extends Component {
 
              </div>
         
-        <FormularioTareas />
+        <FormularioTareas agregarTarea= {this.agregarTarea} />
             
         
         <Tareas tareas = {this.state.tareas}/>
