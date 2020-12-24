@@ -34,6 +34,20 @@ class App extends Component {
     this.setState({tareas: nuevasTareas})
   }
 
+  realizarTarea = idTarea => {
+
+    const nuevasTareas = this.state.tareas.map(tarea => {
+      if (tarea.idTarea === idTarea){
+        tarea.hecho = !tarea.hecho
+      }
+
+      return tarea
+    })
+
+    this.setState({tareas: nuevasTareas})
+
+  }
+
   render(){
     return (
       <div>
@@ -50,7 +64,9 @@ class App extends Component {
         
         <Tareas 
         tareas = {this.state.tareas} 
-        eliminarTarea={this.eliminarTarea}/>
+        eliminarTarea={this.eliminarTarea}
+        realizarTarea={this.realizarTarea}
+        />
       </div>
       </div>
       </div>

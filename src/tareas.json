@@ -5,7 +5,7 @@
             "responsable": "Sebita",
             "descripcion": "Limpiar el cuarto",
             "prioridad": "media",
-            "hecho": "No"
+            "hecho": "true"
         },
 
         {
@@ -14,7 +14,7 @@
             "responsable": "Andy",
             "descripcion": "Comprar silla",
             "prioridad": "baja",
-            "hecho": "No"
+            "hecho": "true"
         },
         {
             "idTarea": 3,
@@ -22,7 +22,7 @@
             "responsable": "Mati",
             "descripcion": "Lavar la ropa",
             "prioridad": "alta",
-            "hecho": "No"
+            "hecho": "false"
         },
         {
             "idTarea": 4,
@@ -30,7 +30,7 @@
             "responsable": "Orne",
             "descripcion": "Pasear al perro",
             "prioridad": "baja",
-            "hecho": "Si"
+            "hecho": "false"
         }
     ]
 

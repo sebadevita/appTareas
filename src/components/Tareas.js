@@ -11,6 +11,7 @@ export default class Tareas extends Component {
             tarea= {tarea} 
             key = {tarea.id}
             eliminarTarea= {this.props.eliminarTarea}
+            realizarTarea= {this.props.realizarTarea}
             />))
     }
 }

@@ -2,6 +2,14 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class Tarea extends Component {
+    
+    tareaCompleta () {
+            return {
+
+                color: this.props.tarea.hecho ? 'black' : 'gray'
+            }
+    }
+    
     render() {
 
         //DESTRUCTURING
@@ -10,7 +18,7 @@ export default class Tarea extends Component {
 
         return (
             <div>
-                <div className="col-md-4">
+                <div className="col-md-4" style={this.tareaCompleta()}>
                     <div className="card mt-4">
                         <div className="card-header text-center">
                             <h3>{tarea.titulo}</h3>
@@ -30,7 +38,14 @@ export default class Tarea extends Component {
 
 
                             <div className="form-check">
-                                <input className="form-check-input" type="checkbox" value="" ></input>
+                                <input 
+                                className="form-check-input" 
+                                type="checkbox" 
+                                value=""
+                                onChange={this.props.realizarTarea.bind(this, tarea.idTarea)} 
+                                >
+
+                                </input>
                                 <label className="form-check-label"></label>
                             </div>
 
