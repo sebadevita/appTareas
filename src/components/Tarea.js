@@ -34,9 +34,10 @@ export default class Tarea extends Component {
                                 <label className="form-check-label"></label>
                             </div>
 
-                            <button className="btn btn-danger">
-                                Borrar
-                            </button>
+
+                            <button className="btn btn-danger"
+                            onClick= {this.props.eliminarTarea.bind(this, tarea.idTarea)}
+                            >Borrar</button>
                         </div>
 
 

@@ -29,6 +29,11 @@ class App extends Component {
 
   }
 
+  eliminarTarea = idTarea => {
+    const nuevasTareas = this.state.tareas.filter(tarea => tarea.idTarea !== idTarea);
+    this.setState({tareas: nuevasTareas})
+  }
+
   render(){
     return (
       <div>
@@ -43,7 +48,9 @@ class App extends Component {
         <FormularioTareas agregarTarea= {this.agregarTarea} />
             
         
-        <Tareas tareas = {this.state.tareas}/>
+        <Tareas 
+        tareas = {this.state.tareas} 
+        eliminarTarea={this.eliminarTarea}/>
       </div>
       </div>
       </div>

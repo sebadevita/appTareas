@@ -6,9 +6,12 @@ import PropTypes from 'prop-types'
 export default class Tareas extends Component {
     render() {
 
-        const {tareas} = this.props
-
-        return (tareas.map(tarea => <Tarea tarea = {tarea} key = {tarea.id}/>))
+        return (this.props.tareas.map(tarea => 
+        <Tarea 
+            tarea= {tarea} 
+            key = {tarea.id}
+            eliminarTarea= {this.props.eliminarTarea}
+            />))
     }
 }
 
