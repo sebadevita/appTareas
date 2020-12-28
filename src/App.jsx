@@ -70,6 +70,7 @@ class App extends Component {
 
               <Navegacion titulo="MIS TAREAS" contador={this.state.tareas.length} />
 
+
               <div className="container">
                 <div className="row mt-4">
                   <div className="col-md-4 text-center">

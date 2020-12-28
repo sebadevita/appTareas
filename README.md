@@ -2,8 +2,11 @@
 
  ## Objetivo 
  
- Crear una aplicación introductoria en React sobre tareas y podremos:
+ Crear una aplicación introductoria en sobre tareas en la cual podremos:
 
-* Listar todas las tareas
+* Listar tareas
 * Agregar una tarea nueva
 * Eliminar una tarea
+* Marcar como realizada una tarea
+
+

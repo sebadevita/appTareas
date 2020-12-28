@@ -69,6 +69,8 @@ export default class FormularioTareas extends Component {
                         />
                         </div>
 
+        
+
                         <div className= "form-group" >
                         <select 
                         className="form-control"
@@ -84,14 +86,13 @@ export default class FormularioTareas extends Component {
                         </select>
                         </div>
 
-                        <div className= "card-footer">
 
 
                         <button type="submit" className="btn btn-primary">
                             Guardar
                         </button>
 
-                        </div>
+                    
 
                 </form>
 
