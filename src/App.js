@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import {tareas} from './tareas.json'
 import FormularioTareas from './components/FormularioTareas';
 import Tareas from './components/Tareas';
+import ListaUsuarios from './components/ListaUsuarios'
 
 class App extends Component {
 
@@ -67,6 +68,8 @@ class App extends Component {
         eliminarTarea={this.eliminarTarea}
         realizarTarea={this.realizarTarea}
         />
+
+        <ListaUsuarios/>
       </div>
       </div>
       </div>
