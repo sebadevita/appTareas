@@ -72,6 +72,7 @@ export default class FormularioTareas extends Component {
                         <div className= "form-group" >
                         <select 
                         className="form-control"
+                        id="exampleFormControlSelect1"
                         name="prioridad" 
                         onChange= {this.onChange}
                         value= {this.state.prioridad}

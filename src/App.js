@@ -1,7 +1,10 @@
 import './App.css';
-import React, {Component} from 'react'
-import {tareas} from './tareas.json'
-import { BrowserRouter as Router , Route } from "react-router-dom"
+import { tareas } from './tareas.json'
+
+//REACT
+
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from "react-router-dom"
 
 //COMPONENTES
 
@@ -36,71 +39,71 @@ class App extends Component {
 
   eliminarTarea = idTarea => {
     const nuevasTareas = this.state.tareas.filter(tarea => tarea.idTarea !== idTarea);
-    this.setState({tareas: nuevasTareas})
+    this.setState({ tareas: nuevasTareas })
   }
 
   realizarTarea = idTarea => {
 
     const nuevasTareas = this.state.tareas.map(tarea => {
-      if (tarea.idTarea === idTarea){
+      if (tarea.idTarea === idTarea) {
         tarea.hecho = !tarea.hecho
       }
 
       return tarea
     })
 
-    this.setState({tareas: nuevasTareas})
+    this.setState({ tareas: nuevasTareas })
 
   }
 
-  render(){
+  render() {
     return (
       <div>
 
         <Router>
 
 
-        <Route exact path='/' render={() => { 
-          
-          return <div>
-          
-          
-        <Navegacion titulo = "Mis Tareas" contador = {this.state.tareas.length}/>
-        
-        <div className = "container">
-          <div className = "row mt-4">
-             <div className = "col-md-4 text-center">
+          <Route exact path='/' render={() => {
 
-             </div>
-        
-        <FormularioTareas agregarTarea= {this.agregarTarea} />
-            
-        
-        <ListaTareas 
-        tareas = {this.state.tareas} 
-        eliminarTarea={this.eliminarTarea}
-        realizarTarea={this.realizarTarea}
-        />
+            return <div>
 
-      </div>
-      </div>
 
-            
-          </div>
-        
-      }}>
+              <Navegacion titulo="MIS TAREAS" contador={this.state.tareas.length} />
 
-        </Route>
+              <div className="container">
+                <div className="row mt-4">
+                  <div className="col-md-4 text-center">
 
-      <Route path= '/usuarios' component= {ListaUsuarios} />
+                    <FormularioTareas agregarTarea={this.agregarTarea} />
 
-      </Router>
+                  </div>
+
+
+                </div>
+
+                <ListaTareas
+                  tareas={this.state.tareas}
+                  eliminarTarea={this.eliminarTarea}
+                  realizarTarea={this.realizarTarea}
+                />
+              </div>
+
+
+            </div>
+
+          }}>
+
+          </Route>
+
+          <Route path='/usuarios' component={ListaUsuarios} />
+
+        </Router>
 
       </div>
     )
 
   }
 }
- 
+
 
 export default App;
