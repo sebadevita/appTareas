@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Prioridades from '../utils/enumPrioridades'
 
 export default class FormularioTareas extends Component {
 
@@ -79,9 +80,11 @@ export default class FormularioTareas extends Component {
                         onChange= {this.onChange}
                         value= {this.state.prioridad}
                         >
-                        <option>Baja</option>
-                        <option>Media</option>
-                        <option>Alta</option>        
+                        
+
+                        <option>{Prioridades.BAJA}</option>
+                        <option>{Prioridades.MEDIA}</option>
+                        <option>{Prioridades.ALTA}</option>        
 
                         </select>
                         </div>
