@@ -5,10 +5,10 @@ import { BrowserRouter as Router , Route } from "react-router-dom"
 
 //COMPONENTES
 
-import Navegacion from './components/Navegacion'
-import FormularioTareas from './components/FormularioTareas'
-import Tareas from './components/Tareas'
-import ListaUsuarios from './components/ListaUsuarios'
+import Navegacion from './components/Navegacion.jsx'
+import FormularioTareas from './components/FormularioTareas.jsx'
+import ListaTareas from './components/ListaTareas.jsx'
+import ListaUsuarios from './components/ListaUsuarios.jsx'
 
 class App extends Component {
 
@@ -76,7 +76,7 @@ class App extends Component {
         <FormularioTareas agregarTarea= {this.agregarTarea} />
             
         
-        <Tareas 
+        <ListaTareas 
         tareas = {this.state.tareas} 
         eliminarTarea={this.eliminarTarea}
         realizarTarea={this.realizarTarea}
