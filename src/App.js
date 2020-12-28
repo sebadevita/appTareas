@@ -1,9 +1,13 @@
 import './App.css';
-import Navegacion from './components/Navegacion';
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {tareas} from './tareas.json'
-import FormularioTareas from './components/FormularioTareas';
-import Tareas from './components/Tareas';
+import { BrowserRouter as Router , Route } from "react-router-dom"
+
+//COMPONENTES
+
+import Navegacion from './components/Navegacion'
+import FormularioTareas from './components/FormularioTareas'
+import Tareas from './components/Tareas'
 import ListaUsuarios from './components/ListaUsuarios'
 
 class App extends Component {
@@ -52,6 +56,15 @@ class App extends Component {
   render(){
     return (
       <div>
+
+        <Router>
+
+
+        <Route exact path='/' render={() => { 
+          
+          return <div>
+          
+          
         <Navegacion titulo = "Mis Tareas" contador = {this.state.tareas.length}/>
         
         <div className = "container">
@@ -69,9 +82,20 @@ class App extends Component {
         realizarTarea={this.realizarTarea}
         />
 
-        <ListaUsuarios/>
       </div>
       </div>
+
+            
+          </div>
+        
+      }}>
+
+        </Route>
+
+      <Route path= '/usuarios' component= {ListaUsuarios} />
+
+      </Router>
+
       </div>
     )
 
