@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Prioridades from '../utils/enumPrioridades'
+import{ Prioridades} from '../utils/enumPrioridades'
 
 export default class FormularioTareas extends Component {
 

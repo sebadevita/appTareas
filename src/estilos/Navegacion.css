@@ -1,0 +1,27 @@
+
+
+.nav-container {
+    display: flex;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    padding: 10px 0;
+    justify-content: center;
+  }
+
+.nav {
+    display: flex;
+    width: 966px;
+    justify-content: space-between;
+  }
+
+  .links {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .mis-tareas {
+      margin-right: 5px;
+      border-radius: 10px;
+    }
+    

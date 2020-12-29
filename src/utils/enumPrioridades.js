@@ -1,7 +1,5 @@
-const PRIORIDADES = {
+export const Prioridades = {
     BAJA: 'Baja',
     MEDIA: 'Media',
     ALTA: 'Alta',
-};
-
-export default PRIORIDADES;
+}

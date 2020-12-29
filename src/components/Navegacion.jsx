@@ -1,31 +1,26 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
+import '../estilos/Navegacion.css'
+import Logo from '../utils/anotador.svg'
 
 export default class Navegacion extends Component {
 
     render() {
-        return(
+        return (
             <div>
 
+                <nav className="nav-container">
+                    <div className="nav">
 
-            <nav className= "navbar navbar-dark bg-dark" >
+                        <img src={Logo} alt=""/>
                     
-                
-                <p className ="text-white">
-                &nbsp;
-                &nbsp;
-                
-                {this.props.titulo}
+                        <div className="links">
 
-                &nbsp;
-                &nbsp;  
-                <span className= "badge rounded-pill bg-light text-dark">
-                
-                {this.props.contador}
-                </span>
-            </p>
-
-                  
-            </nav>
+                        <div className="mis-tareas">{this.props.titulo}</div>
+                        
+                        <div>{this.props.contador}</div>
+                        </div>
+                    </div>
+                </nav>
             </div>
 
         )
