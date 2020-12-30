@@ -12,16 +12,23 @@
 .nav {
     display: flex;
     width: 966px;
+    height: 50px;
     justify-content: space-between;
+    align-items: center;
   }
 
   .links {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
   }
 
   .mis-tareas {
       margin-right: 5px;
-      border-radius: 10px;
     }
+
+ .contador{
+     text-align: center;
+     font-size: 15px;
+ }
     

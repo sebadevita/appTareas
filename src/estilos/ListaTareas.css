@@ -1,0 +1,5 @@
+.lista-tareas-container {
+    display: flex;
+    color: red;
+    background-color: red;
+}

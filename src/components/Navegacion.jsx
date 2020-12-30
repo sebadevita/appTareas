@@ -17,8 +17,9 @@ export default class Navegacion extends Component {
 
                         <div className="mis-tareas">{this.props.titulo}</div>
                         
-                        <div>{this.props.contador}</div>
+                        <div className="contador badge badge-pill badge-light">{this.props.contador}</div>
                         </div>
+                        
                     </div>
                 </nav>
             </div>
