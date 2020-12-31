@@ -71,10 +71,7 @@ class App extends Component {
               <Navegacion titulo="MIS TAREAS" contador={this.state.tareas.length} />
 
               <FormularioTareas agregarTarea={this.agregarTarea} />
-
-
-
-
+              
               <ListaTareas
                 tareas={this.state.tareas}
                 eliminarTarea={this.eliminarTarea}

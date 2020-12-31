@@ -1,0 +1,21 @@
+
+.formulario-tareas-container{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.formulario-tareas{
+    width: 500px;
+    display: flex;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    justify-content: center;
+    
+}
+
+.boton-guardar{
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
