@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import '../estilos/Tarea.css'
+
 
 export default class Tarea extends Component {
 
@@ -18,8 +20,9 @@ export default class Tarea extends Component {
 
         return (
             <div>
-                <div className="col-md-4" style={this.tareaCompleta()}>
-                    <div className="card mt-4">
+
+                   
+                    <div className="card tarea-item">
                         <div className="card-header text-center">
                             <h3>{tarea.titulo}</h3>
 
@@ -55,9 +58,9 @@ export default class Tarea extends Component {
                         </div>
 
 
+
+                        </div>
                     </div>
-                </div>
-            </div>
         )
     }
 }

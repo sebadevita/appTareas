@@ -1,5 +1,19 @@
-.lista-tareas-container {
+.tareas-grid-container{
+
     display: flex;
-    color: red;
-    background-color: red;
+    justify-content: center;
+    margin-bottom: 100px;
+    
 }
+
+
+    
+.tareas-grid{
+    width: 966;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center; /* Si hubiera más de una linea reemplazar por-> align-content: center */
+   
+  }

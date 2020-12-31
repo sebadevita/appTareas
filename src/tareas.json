@@ -31,6 +31,14 @@
             "descripcion": "Pasear al perro",
             "prioridad": "baja",
             "hecho": "false"
+        },
+        {
+            "idTarea": 5,
+            "titulo": "Tarea 5",
+            "responsable": "Carlos",
+            "descripcion": "Regar las plantas",
+            "prioridad": "baja",
+            "hecho": "true"
         }
     ]
 
