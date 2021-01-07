@@ -15,46 +15,46 @@ import ListaUsuarios from './components/ListaUsuarios.jsx'
 
 class App extends Component {
 
-  state = {
+  // state = {
 
-    tareas: tareas
+  //   tareas: tareas
 
-  }
+  // }
 
-  agregarTarea = tarea => {
+  // agregarTarea = tarea => {
 
-    const nuevaTarea = {
-      id: this.state.tareas.length,
-      titulo: tarea.titulo,
-      descripcion: tarea.descripcion,
-      prioridad: tarea.prioridad,
-      responsable: tarea.responsable,
-    }
+  //   const nuevaTarea = {
+  //     id: this.state.tareas.length,
+  //     titulo: tarea.titulo,
+  //     descripcion: tarea.descripcion,
+  //     prioridad: tarea.prioridad,
+  //     responsable: tarea.responsable,
+  //   }
 
-    this.setState({
-      tareas: [...this.state.tareas, nuevaTarea]
-    })
+  //   this.setState({
+  //     tareas: [...this.state.tareas, nuevaTarea]
+  //   })
 
-  }
+  // }
 
-  eliminarTarea = idTarea => {
-    const nuevasTareas = this.state.tareas.filter(tarea => tarea.idTarea !== idTarea);
-    this.setState({ tareas: nuevasTareas })
-  }
+  // eliminarTarea = idTarea => {
+  //   const nuevasTareas = this.state.tareas.filter(tarea => tarea.idTarea !== idTarea);
+  //   this.setState({ tareas: nuevasTareas })
+  // }
 
-  realizarTarea = idTarea => {
+  // realizarTarea = idTarea => {
 
-    const nuevasTareas = this.state.tareas.map(tarea => {
-      if (tarea.idTarea === idTarea) {
-        tarea.hecho = !tarea.hecho
-      }
+  //   const nuevasTareas = this.state.tareas.map(tarea => {
+  //     if (tarea.idTarea === idTarea) {
+  //       tarea.hecho = !tarea.hecho
+  //     }
 
-      return tarea
-    })
+  //     return tarea
+  //   })
 
-    this.setState({ tareas: nuevasTareas })
+  //   this.setState({ tareas: nuevasTareas })
 
-  }
+  // }
 
   render() {
     return (
@@ -68,14 +68,18 @@ class App extends Component {
             return <div>
 
 
-              <Navegacion titulo="MIS TAREAS" contador={this.state.tareas.length} />
+              <Navegacion titulo="MIS TAREAS" 
+              // contador={this.state.tareas.length} 
+              />
 
-              <FormularioTareas agregarTarea={this.agregarTarea} />
+              <FormularioTareas 
+              // agregarTarea={this.agregarTarea} 
+              />
               
               <ListaTareas
-                tareas={this.state.tareas}
-                eliminarTarea={this.eliminarTarea}
-                realizarTarea={this.realizarTarea}
+                // tareas={this.state.tareas}
+                // eliminarTarea={this.eliminarTarea}
+                // realizarTarea={this.realizarTarea}
               />
 
             </div>

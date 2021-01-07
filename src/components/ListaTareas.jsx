@@ -1,10 +1,34 @@
 import React, { Component } from 'react'
 import Tarea from './Tarea'
 import PropTypes from 'prop-types'
+
 import '../estilos/ListaTareas.css'
 
 
+//REDUX
+import store from '../redux/store'
+
+
 export default class Tareas extends Component {
+
+
+    constructor() {
+        super()
+
+        this.state = {
+            tareas: store.getState().tareas
+        }
+    }
+    
+    componentDidMount() {
+        store.subscribe(() => {
+            this.setState({
+                tareas: store.getState().tareas
+            })
+        })
+    }
+
+
     render() {
 
         return (
@@ -16,21 +40,21 @@ export default class Tareas extends Component {
         
             
             
-        {this.props.tareas.map(tarea => 
-
+        {this.state.tareas.map(tarea => 
 
         <Tarea className= "tarea-item"
             tarea= {tarea} 
-            key = {tarea.id}
-            eliminarTarea= {this.props.eliminarTarea}
-            realizarTarea= {this.props.realizarTarea}
-            ></Tarea> 
+            key = {tarea.id}/> 
             )}
         
             </div>
         </div>
         )
     }
+
+
+  
+
 }
 
 Tareas.propTypes = {
@@ -38,3 +62,5 @@ Tareas.propTypes = {
     tareas: PropTypes.array.isRequired
 
 }
+
+
