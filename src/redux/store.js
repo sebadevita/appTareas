@@ -5,7 +5,6 @@ import {tareas as tareasJson} from '../tareas.json'
 export const ELIMINAR_TAREA = 'ELIMINAR_TAREA'
 export const REALIZAR_TAREA = 'REALIZAR_TAREA'
 export const AGREGAR_TAREA = 'AGREGAR_TAREA'
-export const CANTIDAD_TAREAS = 'CANTIDAD_TAREAS'
 
 
 const reducerTareas = (state, action) => {
@@ -38,7 +37,7 @@ const reducerTareas = (state, action) => {
         }
 
     } else if (action.type === AGREGAR_TAREA){
-        action.tarea.idTarea = state.tareas.legnth + 1
+        action.tarea.idTarea = state.tareas.length + 1
         state.tareas.push(action.tarea)
     
     }
