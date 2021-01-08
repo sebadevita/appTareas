@@ -59,9 +59,7 @@ export default class Tarea extends Component {
 
 
                         <button className="btn btn-danger"
-                            onClick={() => {
-                                console.log('Elimina')
-                                this.eliminarTarea(tarea)}
+                            onClick={() => {this.eliminarTarea(tarea)}
                             }
                         >Borrar</button>
                     </div>

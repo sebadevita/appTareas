@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import{ Prioridades} from '../utils/enumPrioridades'
 import  '../estilos/FormularioTareas.css'
+import store, { AGREGAR_TAREA } from '../redux/store'
+
 
 export default class FormularioTareas extends Component {
 
@@ -24,7 +26,14 @@ export default class FormularioTareas extends Component {
     
     onSubmit = e => { 
         e.preventDefault()
-        this.props.agregarTarea(this.state)
+        this.agregarTarea(this.state)
+    }
+
+    agregarTarea(tarea){
+        store.dispatch({
+            type: AGREGAR_TAREA,
+            tarea: tarea,
+        })
     }
 
     render() {
@@ -89,7 +98,9 @@ export default class FormularioTareas extends Component {
                         </div>
                     
                         <div className= "boton-guardar">
-                            <button type="submit" className="btn btn-primary">
+                            <button 
+                            ype="submit" 
+                            className="btn btn-primary">
                                 Guardar
                             </button>
                         </div>
