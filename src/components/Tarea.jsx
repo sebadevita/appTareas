@@ -3,29 +3,12 @@ import PropTypes from 'prop-types'
 import '../estilos/Tarea.css'
 
 //REDUX
-import store from '../redux/store'
+import store, {REALIZAR_TAREA, ELIMINAR_TAREA} from '../redux/store'
 
 
 
 
 export default class Tarea extends Component {
-
-    constructor() {
-        super()
-        this.eliminarTarea = this.eliminarTarea.bind(this)
-
-        this.state = {
-            tareas: []
-        }
-    }
-
-    componentDidMount() {
-        store.subscribe(() => {
-            this.setState({
-                tareas: store.getState().tareas
-            })
-        })
-    }
 
     tareaCompleta() {
         return {
@@ -64,7 +47,7 @@ export default class Tarea extends Component {
                             className="form-check-input"
                             type="checkbox"
                             value=""
-                            //onChange={this.props.realizarTarea.bind(this, tarea.idTarea)}
+                            onChange={() => {this.actualizarTarea(tarea)}}
                            >
 
                         </input>
@@ -94,8 +77,15 @@ export default class Tarea extends Component {
 
     eliminarTarea(tarea) {
         store.dispatch({
-            type: "ELIMINAR_TAREA",
+            type: ELIMINAR_TAREA,
             tarea: tarea,
+        })
+    }
+
+    actualizarTarea(tarea){
+        store.dispatch({
+            type: REALIZAR_TAREA,
+            tarea:tarea
         })
     }
 

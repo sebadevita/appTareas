@@ -1,0 +1,40 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+        "jest/globals": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly",
+        "Phaser": "readonly",
+        "Player": "readonly",
+        "ScoreBoard": "readonly",
+        "io": "readonly",
+        "powerups": "readonly",
+        "joinGame": "readonly",
+        "createGame": "readonly",
+        "formatMinutes": "readonly",
+        "menu": "readonly",
+        "Latency": "readonly",
+        "preloadAssets": "readonly",
+        "Star": "readonly",
+        "Meteor": "readonly",
+        "Powerup": "readonly",
+        "EnemyPlayer": "readonly",
+        "Heart": "readonly",
+        "laserMapper": "readonly",
+        "SlowLaser": "readonly",
+        "GenericPlayer": "readonly"
+    },
+    "plugins": [
+        "jest"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules": {}
+}
