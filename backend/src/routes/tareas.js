@@ -2,14 +2,16 @@ const {Router} = require('express')
 
 const router = Router()
 
+const {getTareas, crearTarea, getUnaTarea, eliminarTarea, actualizarTarea} = require('../controllers/tareasController')
+
 router.route('/')
-    .get((req, res) => res.send("Tareas routes"))
-    // .post()
+    .get(getTareas)
+    .post(crearTarea)
 
 router.route('/:id')
-    // .get()
-    // .put()
-    // .delete()
+    .get(getUnaTarea)
+    .put(actualizarTarea)
+    .delete(eliminarTarea)
 
 module.exports = router
 
