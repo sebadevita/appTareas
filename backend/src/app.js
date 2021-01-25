@@ -14,8 +14,8 @@ app.use(express.json())
 
 //RUTAS
 
-app.get('/api/usuarios', (req, res) => res.send('Usuarios routes'))
-app.get('/api/tareas', (req, res) => res.send('Tareas routes'))
+app.use('/api/usuarios', require('./routes/usuarios') )
+app.use('/api/tareas', require('./routes/tareas') )
 
 module.exports = app
 
