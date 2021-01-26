@@ -9,9 +9,13 @@ const usuarioSchema = new Schema ({
     username: {
         type: String,
         required: true,
-    },
-timestamps: true
+        trim: true,
+        unique: true,
+    }},
 
-})
+    {timestamps: true}
 
+)
+
+//En mongo se crea la coleccion Usuarios
 module.exports = model('Usuario', usuarioSchema)
