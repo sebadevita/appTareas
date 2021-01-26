@@ -1,9 +1,25 @@
 const usuarioController = {}
 
-usuarioController.getUsuarios = (req, res) => res.send({mensaje: []})
+const Usuario = require('../models/usuario')
 
-usuarioController.crearUsuario = (req, res) => res.json({mensaje: 'Usuario guardado exitosamente!'})
+usuarioController.getUsuarios = async (req, res) => {
+    const usuarios = await Usuario.find()
+    res.json(usuarios)
+}
 
-usuarioController.eliminarUsuario = (req, res) => res.json({mensaje: 'Usuario eliminado exitosamente!'})
+usuarioController.crearUsuario = async (req, res) => {
+    const{username, nombre} = req.body
+    const nuevoUsuario = new Usuario({
+        username,
+        nombre
+    })
+    await nuevoUsuario.save()
+    res.json({mensaje: 'Usuario guardado exitosamente!'})
+}
+
+usuarioController.eliminarUsuario = async (req, res) => {
+    await Usuario.findByIdAndDelete(req.params.id)
+    res.json({mensaje: 'Usuario eliminado exitosamente!'})
+}
 
 module.exports = usuarioController
