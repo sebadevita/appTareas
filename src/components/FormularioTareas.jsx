@@ -2,18 +2,34 @@ import React, {Component} from 'react';
 import{ Prioridades} from '../utils/enumPrioridades'
 import  '../estilos/FormularioTareas.css'
 import store, { AGREGAR_TAREA } from '../redux/store'
-
+import axios from 'axios'
+const API_URL_USUARIOS = 'http://localhost:5000/api/usuarios/'
 
 export default class FormularioTareas extends Component {
 
         state = {
+          usuarios: [],
+          ususarioSeleccionado: '',
           titulo: '',
           responsable: '',
           descripcion: '',
           prioridad: 'baja'
         }
 
+
+    async componentDidMount(){
+        const res = await axios.get(API_URL_USUARIOS)
+        this.setState({usuarios: res.data.map(usuario => usuario.username)})
+        console.log(res.data)
+    }
+
     //Las funciones flecha evitan tener que usar el metodo ".bind"
+
+    onInputChange = e =>{
+        this.setState({
+            ususarioSeleccionado: e.target.value
+        })
+    }
 
     onChange = e => {
         const {value, name} = e.target
@@ -61,14 +77,21 @@ export default class FormularioTareas extends Component {
                         </div>
 
                         <div className= "form-group" >
-                            <input 
-                                type= "text"
-                                name= "responsable"
-                                className= "form-control"
-                                placeholder= "Responsable"
-                                 onChange= {this.onChange}
-                                 value = {this.state.responsable}
-                        />
+                        <select
+                                className="form-control"
+                                name="ususarioSeleccionado"
+                                onChange={this.onInputChange}
+                                required>
+                                {
+                                    this.state.usuarios.map(usuario => (
+                                        <option key={usuario}>
+                                            {usuario}
+                                        </option>
+                                    ))
+                                }
+                            </select>
+
+                    
                          </div>
 
                         <div className= "form-group" >
@@ -99,7 +122,7 @@ export default class FormularioTareas extends Component {
                     
                         <div className= "boton-guardar">
                             <button 
-                            ype="submit" 
+                            type="submit" 
                             className="btn btn-primary">
                                 Guardar
                             </button>
