@@ -9,7 +9,7 @@ export default class FormularioTareas extends Component {
 
         state = {
           usuarios: [],
-          ususarioSeleccionado: '',
+          usuarioSeleccionado: '',
           titulo: '',
           responsable: '',
           descripcion: '',
@@ -19,17 +19,13 @@ export default class FormularioTareas extends Component {
 
     async componentDidMount(){
         const res = await axios.get(API_URL_USUARIOS)
-        this.setState({usuarios: res.data.map(usuario => usuario.username)})
-        console.log(res.data)
+        this.setState({usuarios: res.data.map(usuario => usuario.username),
+        usuarioSeleccionado: res.data[0].username
+    })
+    
     }
 
     //Las funciones flecha evitan tener que usar el metodo ".bind"
-
-    onInputChange = e =>{
-        this.setState({
-            ususarioSeleccionado: e.target.value
-        })
-    }
 
     onChange = e => {
         const {value, name} = e.target
@@ -43,6 +39,7 @@ export default class FormularioTareas extends Component {
     onSubmit = e => { 
         e.preventDefault()
         this.agregarTarea(this.state)
+        console.log(this.state.responsable)
     }
 
     agregarTarea(tarea){
@@ -80,7 +77,7 @@ export default class FormularioTareas extends Component {
                         <select
                                 className="form-control"
                                 name="ususarioSeleccionado"
-                                onChange={this.onInputChange}
+                                onChange={this.onChange}
                                 required>
                                 {
                                     this.state.usuarios.map(usuario => (
