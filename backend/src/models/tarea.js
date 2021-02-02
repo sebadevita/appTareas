@@ -2,14 +2,8 @@ const {Schema, model} = require('mongoose')
 
 
 const tareaSchema = new Schema ({
-    titulo: {
-        type: String,
-        required: true,
-    },
-    descripcion: {
-        type: String,
-        required: true,
-    },
+    titulo: String,
+    descripcion: String,
     responsable: String,
     prioridad: String,
     hecho: Boolean,

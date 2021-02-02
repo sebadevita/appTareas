@@ -4,12 +4,12 @@ import  '../estilos/FormularioTareas.css'
 import store, { AGREGAR_TAREA } from '../redux/store'
 import axios from 'axios'
 const API_URL_USUARIOS = 'http://localhost:5000/api/usuarios/'
+const API_URL_TAREAS = 'http://localhost:5000/api/tareas/'
 
 export default class FormularioTareas extends Component {
 
         state = {
           usuarios: [],
-          usuarioSeleccionado: '',
           titulo: '',
           responsable: '',
           descripcion: '',
@@ -20,7 +20,7 @@ export default class FormularioTareas extends Component {
     async componentDidMount(){
         const res = await axios.get(API_URL_USUARIOS)
         this.setState({usuarios: res.data.map(usuario => usuario.username),
-        usuarioSeleccionado: res.data[0].username
+        responsable: res.data[0].username
     })
     
     }
@@ -36,10 +36,18 @@ export default class FormularioTareas extends Component {
 
     }
     
-    onSubmit = e => { 
+    onSubmit = async e => { 
         e.preventDefault()
-        this.agregarTarea(this.state)
-        console.log(this.state.responsable)
+        const nuevaTarea = {
+            titulo: this.state.titulo,
+            descripcion: this.state.descripcion,
+            responsable: this.state.responsable,
+            prioridad: this.state.prioridad,
+        }
+        // this.agregarTarea(this.state)
+        this.agregarTarea(nuevaTarea)
+        const res = await axios.post(API_URL_TAREAS, nuevaTarea)
+        console.log(res)        
     }
 
     agregarTarea(tarea){
@@ -76,7 +84,7 @@ export default class FormularioTareas extends Component {
                         <div className= "form-group" >
                         <select
                                 className="form-control"
-                                name="ususarioSeleccionado"
+                                name="responsable"
                                 onChange={this.onChange}
                                 required>
                                 {
